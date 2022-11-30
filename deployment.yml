@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: deployment
+metadata:
+    name: <<deployment name>>
+    namespace: <<namespace name>>
+    labels: #deployment lables
+        key: value
+spec:
+    replicas: 3 #no of pod rs
+    strategy: 
+        type: Recreate
+    selector:
+        matchLabels:
+            key: value
+    template:
+        metadata:
+            name: <<pod name>>
+            labels:
+                key: value
+        spec:
+            containers
+            - name: <<container name>>
+              image: <<image name>>
+              ports:
+              - containerPort: <<container port>>
+    
